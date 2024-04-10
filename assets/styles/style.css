@@ -60,7 +60,7 @@
   margin-top: 10px;
 }
 
-.card:before {
+.card::before {
   content: "";
   position: absolute;
   top: 0;

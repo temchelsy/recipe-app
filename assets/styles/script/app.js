@@ -1,7 +1,7 @@
 document.getElementById('button').addEventListener('click', () => {
   const inputValue = document.getElementById('input-name').value
   const details = document.getElementById('details')
-  details.innerHTML = '';
+  details.innerHTML = ''
   fetch(`https:www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
     .then((response) => response.json())
     .then((data) => {
@@ -12,10 +12,10 @@ document.getElementById('button').addEventListener('click', () => {
       } else {
         document.getElementById('msg').style.display = 'none'
         data.meals.forEach((meal) => {
-          itemDiv = document.createElement('div')
+        const  itemDiv = document.createElement('div')
           itemDiv.className = 'm-2 singleItem'
-          itemDiv.setAttribute("onclick", `details('${meal.idMeal}')`)
-          let itemInfo = `
+          itemDiv.setAttribute('onclick', `details('${meal.idMeal}')`)
+          const itemInfo = `
                     <div class="card " style="width: 12rem;">
                         <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
                         <div class="card-body text-center">
@@ -30,7 +30,7 @@ document.getElementById('button').addEventListener('click', () => {
     })
 })
 
-function details(id) {
+ function details(id) {
   fetch(`https:www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then((res) => res.json())
     .then((detail) => {
