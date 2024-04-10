@@ -12,7 +12,7 @@ document.getElementById('button').addEventListener('click', () => {
       } else {
         document.getElementById('msg').style.display = 'none'
         data.meals.forEach((meal) => {
-        const  itemDiv = document.createElement('div')
+          const itemDiv = document.createElement('div')
           itemDiv.className = 'm-2 singleItem'
           itemDiv.setAttribute('onclick', `details('${meal.idMeal}')`)
           const itemInfo = `
@@ -30,7 +30,7 @@ document.getElementById('button').addEventListener('click', () => {
     })
 })
 
- function details(id) {
+function details (id) {
   fetch(`https:www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then((res) => res.json())
     .then((detail) => {
